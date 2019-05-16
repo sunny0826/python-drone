@@ -3,9 +3,7 @@ FROM python:3.6.8-alpine3.9
 LABEL maintainer="sunnydog0826@gmail.com"
 
 # 设置alpine的镜像地址为阿里云的地址
-RUN echo "https://mirrors.aliyun.com/alpine/v3.9/main/" > /etc/apk/repositories \
-    # 安装依赖包
-    && apk update \
+RUN apk update \
     && apk add --no-cache bash \
     # libevent-dev libxml2-dev  libffi libxml2 libxslt libxslt-dev  \
     python3 gcc g++ python3-dev python-dev linux-headers libffi-dev openssl-dev make \
